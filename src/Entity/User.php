@@ -44,11 +44,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(length: 255)]
     #[Groups(['user:read:name'])]
-    private ?string $Vorname = null;
+    private ?string $firstname = null;
 
     #[ORM\Column(length: 255)]
     #[Groups(['user:read:name'])]
-    private ?string $Nachname = null;
+    private ?string $lastname = null;
 
     public function __construct()
     {
@@ -167,26 +167,26 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getVorname(): ?string
+    public function getfirstname(): ?string
     {
-        return $this->Vorname;
+        return $this->firstname;
     }
 
-    public function setVorname(string $Vorname): static
+    public function setfirstname(string $firstname): static
     {
-        $this->Vorname = $Vorname;
+        $this->firstname = $firstname;
 
         return $this;
     }
 
-    public function getNachname(): ?string
+    public function getlastname(): ?string
     {
-        return $this->Nachname;
+        return $this->lastname;
     }
 
-    public function setNachname(string $Nachname): static
+    public function setlastname(string $lastname): static
     {
-        $this->Nachname = $Nachname;
+        $this->lastname = $lastname;
 
         return $this;
     }
