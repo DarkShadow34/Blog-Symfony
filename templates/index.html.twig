@@ -1,0 +1,24 @@
+{{ include("base.html.twig") }}
+{% block body %}
+    <div style="display: flex; flex-direction: column; gap: 2rem">
+        {% for post in posts %}
+            <div style="border: 2px solid black">
+                <div style="border: 1px solid black; display: flex; flex-direction: row; gap: 0.5rem">
+                    {% if post.date|date("Y-m-d") == "now"|date("Y-m-d") %}
+                        <p>Heute:</p>
+                    {% else %}
+                        <p>{{ post.date | date("d.m.Y") }}:</p>
+                    {% endif %}
+                    <p>{{ post.title }}</p>
+                </div>
+                <div style="border: 1px solid black;">
+                    <p>{{ post.content }}</p>
+                </div>
+                <div style="border: 1px solid black; display: flex; flex-direction: row; gap: 0.5rem">
+                    <p>Author:</p>
+                    <p>{{ post.author.firstname }} {{ post.author.lastname }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

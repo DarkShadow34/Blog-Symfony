@@ -12,6 +12,12 @@
         {% endblock %}
     </head>
     <body>
+        <nav style="border: 2px solid black; text-align: center ">
+            <a href="{{ path('app_index') }}">Startseite</a>
+            <small style="font-size: large">-</small>
+            <a href="{{ path('app_login') }}">Login</a>
+        </nav>
+
         {% block body %}{% endblock %}
     </body>
 </html>
